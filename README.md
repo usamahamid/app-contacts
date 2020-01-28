@@ -1,6 +1,6 @@
 # My Contacts
 
-A simple Xamarin app named *My Contacts*. The app is a simple list of contacts, each of which can be viewed in a detail screen and modified in an edit screen. It runs on iOS, Android, and UWP. It is powered by an ASP.NET Core web API backend.
+A Xamarin.Forms app named *My Contacts*. The app is a simple list of contacts, each of which can be viewed in a detail screen and modified in an edit screen. It runs on iOS, Android, and UWP. It is powered by an ASP.NET Core web API backend.
 
 ![Screenshots of My Contact app](/art/mycontacts.png)
     
