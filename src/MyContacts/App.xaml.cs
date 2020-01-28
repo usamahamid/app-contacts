@@ -11,7 +11,7 @@ namespace MyContacts
 {
     public partial class App : Application
     {
-        public static bool UseLocalDataSource = false;
+        public static bool UseLocalDataSource = true;
         public App()
         {
             InitializeComponent();
