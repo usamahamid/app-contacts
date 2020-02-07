@@ -42,7 +42,9 @@ namespace MyContacts.API
                 app.UseDeveloperExceptionPage();
             }
 
+#if !DEBUG
             app.UseHttpsRedirection();
+#endif
 
             app.UseRouting();
 

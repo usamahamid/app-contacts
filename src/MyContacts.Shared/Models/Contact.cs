@@ -5,9 +5,10 @@ using MvvmHelpers;
 namespace MyContacts.Shared.Models
 {
     public class Contact : ObservableObject, IContact
-    {  
-		public string DataPartitionId { get; set; }
-        string id;
+    {
+        public string DataPartitionId { get; set; } = string.Empty;
+
+        string id = string.Empty;
         [JsonPropertyName("id")]
         public string Id 
         { 
@@ -15,7 +16,7 @@ namespace MyContacts.Shared.Models
             set => SetProperty(ref id, value); 
         }
 
-        string firstName;
+        string firstName = string.Empty;
         [JsonPropertyName("firstName")]
         public string FirstName
         {
@@ -30,7 +31,7 @@ namespace MyContacts.Shared.Models
             }
         }
 
-        string lastName;
+        string lastName = string.Empty;
         [JsonPropertyName("lastName")]
         public string LastName
         {
@@ -45,7 +46,7 @@ namespace MyContacts.Shared.Models
             }
         }
 
-        string company;
+        string company = string.Empty;
         [JsonPropertyName("company")]
         public string Company
         {
@@ -53,7 +54,7 @@ namespace MyContacts.Shared.Models
             set => SetProperty(ref company, value);
         }
 
-        string jobTitle;
+        string jobTitle = string.Empty;
         [JsonPropertyName("jobTitle")]
         public string JobTitle
         {
@@ -61,7 +62,7 @@ namespace MyContacts.Shared.Models
             set => SetProperty(ref jobTitle, value);
         }
 
-        string email;
+        string email = string.Empty;
         [JsonPropertyName("email")]
         public string Email
         {
@@ -69,7 +70,7 @@ namespace MyContacts.Shared.Models
             set => SetProperty(ref email, value);
         }
 
-        string phone;
+        string phone = string.Empty;
         [JsonPropertyName("phone")]
         public string Phone
         {
@@ -77,7 +78,7 @@ namespace MyContacts.Shared.Models
             set => SetProperty(ref phone, value);
         }
 
-        string street;
+        string street = string.Empty;
         [JsonPropertyName("street")]
         public string Street
         {
@@ -90,7 +91,7 @@ namespace MyContacts.Shared.Models
             }
         }
 
-        string city;
+        string city = string.Empty;
         [JsonPropertyName("city")]
         public string City
         {
@@ -103,7 +104,7 @@ namespace MyContacts.Shared.Models
             }
         }
 
-        string postalCode;
+        string postalCode = string.Empty;
         [JsonPropertyName("postalCode")]
         public string PostalCode
         {
@@ -119,7 +120,7 @@ namespace MyContacts.Shared.Models
         }
 
 
-        string state;
+        string state = string.Empty;
         [JsonPropertyName("state")]
         public string State
         {
@@ -135,13 +136,13 @@ namespace MyContacts.Shared.Models
         }
 
         [JsonPropertyName("latitude")]
-        public double Latitude { get; set; }
+        public double Latitude { get; set; } = 0;
 
         [JsonPropertyName("longitude")]
-        public double Longitude { get; set; }
+        public double Longitude { get; set; } = 0;
 
 
-        string photoUrl;
+        string photoUrl= "https://raw.githubusercontent.com/jamesmontemagno/app-monkeys/master/douc.jpg";
         [JsonPropertyName("photoUrl")]
         public string PhotoUrl
         {

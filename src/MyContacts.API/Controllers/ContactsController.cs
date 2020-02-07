@@ -45,13 +45,9 @@ namespace MyContacts.API.Controllers
         // PUT: api/Contacts/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutContact(string id, Contact contact)
+        [HttpPut]
+        public async Task<IActionResult> PutContact([FromBody]Contact contact)
         {
-            if (id != contact.Id)
-            {
-                return BadRequest();
-            }
 
             context.Entry(contact).State = EntityState.Modified;
 
@@ -59,15 +55,15 @@ namespace MyContacts.API.Controllers
             {
                 await context.SaveChangesAsync();
             }
-            catch (DbUpdateConcurrencyException)
+            catch (Exception ex)
             {
-                if (!ContactExists(id))
+                if (!ContactExists(contact.Id))
                 {
                     return NotFound();
                 }
                 else
                 {
-                    throw;
+                    throw ex;
                 }
             }
 
@@ -78,14 +74,15 @@ namespace MyContacts.API.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPost]
-        public async Task<ActionResult<Contact>> PostContact(Contact contact)
+        public async Task<ActionResult<Contact>> PostContact([FromBody]Contact contact)
         {
+            contact.Id = Guid.NewGuid().ToString();
             context.Contacts.Add(contact);
             try
             {
                 await context.SaveChangesAsync();
             }
-            catch (DbUpdateException)
+            catch (Exception ex)
             {
                 if (ContactExists(contact.Id))
                 {
@@ -93,7 +90,7 @@ namespace MyContacts.API.Controllers
                 }
                 else
                 {
-                    throw;
+                    throw ex;
                 }
             }
 

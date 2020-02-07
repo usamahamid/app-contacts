@@ -20,7 +20,6 @@ namespace MyContacts.Services
     {
         HttpClient client;
         List<Contact> contacts;
-
         public static string BackendUrl = "https://mycontactsapi20200107080452.azurewebsites.net";
 
         //public static string BackendUrl = 
@@ -116,8 +115,15 @@ namespace MyContacts.Services
             }
 
             var response = await client.PostAsync($"api/Contacts", new StringContent(serializedContact, Encoding.UTF8, "application/json"));            
+            if(response.IsSuccessStatusCode)
+            {
+                var json = await response.Content.ReadAsStringAsync();
+                var c = JsonSerializer.Deserialize<Contact>(json);
+                contact.Id = c.Id;
+                return true;
+            }
 
-            return response.IsSuccessStatusCode;
+            return false;
         }
 
         public async Task<bool> UpdateItem(Contact contact)
@@ -147,10 +153,8 @@ namespace MyContacts.Services
             }
 
             var serializedContact = JsonSerializer.Serialize(contact);
-            var buffer = Encoding.UTF8.GetBytes(serializedContact);
-            var byteContent = new ByteArrayContent(buffer);
 
-            var response = await client.PutAsync(new Uri($"api/Contacts/{contact.Id}"), byteContent);
+            var response = await client.PutAsync($"api/Contacts", new StringContent(serializedContact, Encoding.UTF8, "application/json"));
 
 
             return response.IsSuccessStatusCode;
