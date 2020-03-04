@@ -10,7 +10,7 @@ using Xamarin.Forms.Platform.Android;
 namespace MyContactsAndroid
 {
     [Activity (Icon = "@drawable/icon", Label = "@string/app_name",
-        Theme = "@style/MyTheme", ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+        Theme = "@style/MyTheme", ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.UiMode | ConfigChanges.Orientation)]
 	public class MainActivity : FormsAppCompatActivity
 	{
 
