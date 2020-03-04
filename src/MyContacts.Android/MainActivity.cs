@@ -24,7 +24,6 @@ namespace MyContactsAndroid
 			Forms.Init (this, savedInstanceState);
 			FormsMaps.Init (this, savedInstanceState);
             FormsMaterial.Init(this, savedInstanceState);
-            //Android.Glide.Forms.Init(this);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             LoadApplication (new App ());
 		}
