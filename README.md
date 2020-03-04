@@ -14,8 +14,7 @@ Includes integrations such as:
 
 
 ## Google Maps API key (Android)
-For Android, you'll need to obtain a Google Maps API key:
-https://developer.xamarin.com/guides/android/platform_features/maps_and_location/maps/obtaining_a_google_maps_api_key/
+For Android, you'll need to obtain a Google Maps API key, read through the [documentation](https://docs.microsoft.com/xamarin/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key).
 
 Insert it in the Android project: `~/Properties/AndroidManifest.xml`:
 

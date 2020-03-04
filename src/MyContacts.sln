@@ -14,6 +14,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CF0E9988-67FF-428B-883B-B58024509B9E}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
+		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backend", "Backend", "{09F03694-8C5A-4B9E-AE23-824C1BF524FE}"
@@ -22,7 +23,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{CAA3EB
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyContacts.API", "MyContacts.API\MyContacts.API.csproj", "{1F41A266-AF6F-41EC-9884-637AC59B1981}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyContacts.Shared", "MyContacts.Shared\MyContacts.Shared.csproj", "{C565E3F9-3D4D-429F-8297-263A364E48E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyContacts.Shared", "MyContacts.Shared\MyContacts.Shared.csproj", "{C565E3F9-3D4D-429F-8297-263A364E48E5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
