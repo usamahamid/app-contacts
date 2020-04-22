@@ -4,7 +4,6 @@ using Xamarin.Essentials;
 
 namespace MyContacts.Util
 {
-
     public static class Settings
     {
         public static DateTime LastUpdate

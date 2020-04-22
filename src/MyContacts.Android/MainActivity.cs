@@ -6,6 +6,7 @@ using Android.OS;
 using Xamarin;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
+using MyContacts.Styles;
 
 namespace MyContactsAndroid
 {
@@ -33,6 +34,12 @@ namespace MyContactsAndroid
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+
+        public override void OnConfigurationChanged(Android.Content.Res.Configuration newConfig)
+        {
+            ThemeHelper.ChangeTheme(MyContacts.Util.Settings.ThemeOption, true);
+            base.OnConfigurationChanged(newConfig);
         }
     }
 }
